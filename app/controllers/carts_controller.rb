@@ -14,10 +14,5 @@ class CartsController < ApplicationController
 		redirect_to cart_path(@cart)
 	end
 
-	def update 
-		@cart = Cart.find_by(id: params[:id])
-		@cart.status = "new"
-		@cart.save
-		redirect_to cart_path
-	end
+
 end
