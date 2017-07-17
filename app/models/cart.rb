@@ -17,4 +17,10 @@ class Cart < ActiveRecord::Base
 		end
 	end
 
+	def remove_items
+		self.line_items.each do |line| 
+			Item.quantity_adjuster(line.quantity, line.item) 
+		end
+	end
+
 end

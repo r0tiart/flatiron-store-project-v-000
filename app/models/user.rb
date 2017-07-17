@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
   end
 
   def current_cart
-  	self.carts.last
+  	self.carts.last 
   end
 end

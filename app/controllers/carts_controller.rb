@@ -9,7 +9,9 @@ class CartsController < ApplicationController
 
 	def checkout
 		@cart = Cart.find_by(id: params[:id])
+		cart = @cart
 		@cart.status = "submitted"
+		@cart.remove_items
 		@cart.save
 		redirect_to cart_path(@cart)
 	end

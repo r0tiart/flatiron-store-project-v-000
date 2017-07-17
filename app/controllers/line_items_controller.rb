@@ -3,7 +3,7 @@ class LineItemsController < ApplicationController
 		@item = Item.find_by(id: params[:item_id])
 
 		if !current_user.current_cart
-			current_user.current_cart=() 
+			current_user.current_cart=("new") 
 		end
 		@cart = current_user.current_cart
 

@@ -6,4 +6,11 @@ class Item < ActiveRecord::Base
 	def self.available_items
 		where("inventory > ?", 0)	
 	end
+
+	def self.quantity_adjuster(amount, item)
+		item = self.find_by(id: item.id)
+		item.inventory -= amount
+		item.save
+
+	end
 end
