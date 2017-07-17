@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   has_many :carts
   has_many :orders
 
+
+  def current_cart=(new_cart = nil)
+  	self.carts.create
+  end
+
+  def current_cart
+  	self.carts.last
+  end
 end
