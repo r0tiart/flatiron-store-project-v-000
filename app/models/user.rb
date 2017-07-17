@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :orders
 
 
-  def current_cart=(new_cart = nil)
+  def current_cart=(new_cart)
   	self.carts.create
   end
 

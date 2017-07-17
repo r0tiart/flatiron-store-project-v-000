@@ -1,10 +1,10 @@
 module CartHelper
 
 	def cart?
-		!!session[:cart_id]
+		!!current_cart
 	end
 
 	def current_cart
-		Cart.find_by(session[:cart_id]) if cart?
+		current_user.current_cart if signed_in?
 	end
 end

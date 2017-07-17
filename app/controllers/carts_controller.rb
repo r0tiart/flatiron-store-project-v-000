@@ -1,5 +1,9 @@
 class CartsController < ApplicationController
 	def show
-		@cart = Cart.find_by(id: params[:id])
+		if !!session[:cart_id]
+			@cart = Cart.find_by(id: params[:id])
+		else
+			redirect_to "/"
+		end
 	end
 end
