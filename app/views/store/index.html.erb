@@ -1,9 +1,5 @@
-<h2>Categories:</h2>
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category) %>
-<% end %>
+<h2><%= link_to "Categories:", categories_path %> </h2>
+<%= render partial: "categories/index", locals: {categories: @categories} %>
 
 <h2>Available Items:</h2>
-<% @items.each do |item| %>
-  <p><%= item.inventory  %><%= item.title %> | <%= number_to_currency(item.price/100) %> | <%= button_to 'Add to Cart', line_items_path(item_id: item) if signed_in? %></p>
-<% end %>
+<%= render partial: "categories/items", collection: @items, as: :item %>
