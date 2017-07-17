@@ -9,7 +9,7 @@ class Cart < ActiveRecord::Base
 
 	def add_item(item_id)
 		if line_items.exists?(item_id: item_id)
-			line = line_items.where(item_id: 1).first
+			line = line_items.where(item_id: item_id).first
 			line.quantity += 1
 			line
 		else

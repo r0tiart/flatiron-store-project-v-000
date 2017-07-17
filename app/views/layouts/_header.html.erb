@@ -8,7 +8,7 @@
             <li><%= "Signed in as #{current_user.email}" %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>    
         <% end %>
-        <% if !!@cart %>
+        <% if !!cart? %>
           <li> <%= link_to "Cart", cart_path(current_cart) %></li>
         <% end %>
     </ul>
