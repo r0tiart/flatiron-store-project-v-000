@@ -26,6 +26,9 @@ group :test, :development do
   gem "thin"
 end
 
+gem 'web-console', '~> 2.0.0.beta4'
+
+
 gem "bootstrap-sass", "~> 3.1.1"
 gem "faker"
 gem "friendly_id"
