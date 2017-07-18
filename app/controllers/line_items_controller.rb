@@ -8,6 +8,7 @@ class LineItemsController < ApplicationController
 		@cart = current_user.current_cart
 
 		@cart.add_item(@item.id).save
+		session[:cart_id] = @cart.id
 		redirect_to cart_path(@cart)
 	end
 end
